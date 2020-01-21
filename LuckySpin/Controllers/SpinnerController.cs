@@ -21,9 +21,8 @@ namespace LuckySpin.Controllers
         [HttpPost]
         public IActionResult Index(Player player)
         { //TODO: Prepare Index action to receive a Player object instead of an integer
-
             //TODO: Pass the Player object to SpinIt using RedirectToAction("SpinIt", object)
-            return RedirectToAction("SpinIt");
+            return RedirectToAction("SpinIt", player);
         }
 
         /***
