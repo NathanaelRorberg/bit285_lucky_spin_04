@@ -19,7 +19,7 @@ namespace LuckySpin.Controllers
                 return View(); //Returns the empty Index.cshtml form
         }
         [HttpPost]
-        public IActionResult Index(int luck)
+        public IActionResult Index(Player player)
         { //TODO: Prepare Index action to receive a Player object instead of an integer
 
             //TODO: Pass the Player object to SpinIt using RedirectToAction("SpinIt", object)
