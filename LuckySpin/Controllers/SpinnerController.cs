@@ -29,11 +29,11 @@ namespace LuckySpin.Controllers
          * Spin Action
          **/  
         [HttpGet]
-        public IActionResult SpinIt(int luck = 3) //TODO: Prepare this method to receive a Player
+        public IActionResult SpinIt(Player player) //TODO: Prepare this method to receive a Player
         {
             //Load up a Spin object with data
             Spin spin = new Spin();
-            spin.Luck = luck; //TODO: Edit this to assign Player's lucky number to spin.Luck
+            spin.Luck = player.luck; //TODO: Edit this to assign Player's lucky number to spin.Luck
             spin.A = random.Next(1, 10);
             spin.B = random.Next(1, 10);
             spin.C = random.Next(1, 10);
@@ -43,7 +43,7 @@ namespace LuckySpin.Controllers
                 spin.Display = "block";
             else
                 spin.Display = "none";
-
+            ViewBag.name = player.name;
             //Send the spin object to the View
             return View(spin);
         }
